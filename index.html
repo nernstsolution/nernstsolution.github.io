@@ -10,84 +10,400 @@
       margin: 0;
       background: #ffffff;
       color: #333;
-      text-align: center;
     }
     header {
-      padding: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      background-color: #ffffff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .logo-container {
+      display: flex;
+      align-items: center;
     }
     .logo {
-      width: 600px;
+      width: 200px;
       height: auto;
-      margin-bottom: 1rem;
-    }
-    h1 {
-      font-size: 2.5rem;
-      margin: 0.5rem 0;
     }
     p.tagline {
       font-size: 1.2rem;
-      margin-bottom: 2rem;
+      margin: 0 0 0 2rem;
+      font-weight: bold;
     }
-    .sections {
+    .navigation {
+      background-color: #f8f9fa;
+      padding: 1rem 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .navigation ul {
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1.5rem;
-      padding: 1rem;
-      max-width: 600px;
+      justify-content: flex-start;
+      list-style: none;
+      margin: 0;
+      padding: 0 2rem;
+      max-width: 1200px;
       margin: 0 auto;
     }
-    .section {
-      background: #f8f9fa;
-      padding: 1rem 2rem;
-      border-radius: 8px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-      width: 100%;
+    .navigation li {
+      margin-right: 2rem;
     }
-    .section h2 {
+    .navigation a {
+      text-decoration: none;
+      color: #1c6fab;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+    .navigation a:hover {
+      color: #145380;
+    }
+    /* Slider styles */
+    .slider-container {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+    }
+    .slider {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+    .slide {
+      min-width: 100%;
+      position: relative;
+    }
+    .slide img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+    }
+    .slide-content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 0 10%;
+      background: linear-gradient(90deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0) 100%);
+      color: white;
+    }
+    .slide-content h2 {
+      font-size: 2.5rem;
+      margin: 0 0 1rem 0;
+    }
+    .slide-content p {
+      font-size: 1.2rem;
+      margin: 0 0 1.5rem 0;
+      max-width: 50%;
+    }
+    .slider-nav {
+      position: absolute;
+      bottom: 20px;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+    .slider-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.5);
+      cursor: pointer;
+    }
+    .slider-dot.active {
+      background-color: white;
+    }
+    .slider-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.3s ease;
+    }
+    .slider-button:hover {
+      background: rgba(0, 0, 0, 0.8);
+    }
+    .slider-button.prev {
+      left: 20px;
+    }
+    .slider-button.next {
+      right: 20px;
+    }
+    /* Content section styles */
+    .main-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    .featured-products {
+      text-align: center;
+    }
+    .featured-products h2 {
+      display: inline-block;
+      border-bottom: 2px solid #007bff;
+      padding-bottom: 0.5rem;
+      margin-bottom: 2rem;
+    }
+    .product-showcase {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+    .product-highlight {
+      border: 1px solid #eee;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .product-image {
+      height: 200px;
+      background-color: #f0f0f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .product-image img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+    .product-details {
+      padding: 1rem;
+      text-align: left;
+    }
+    .product-details h3 {
+      margin-top: 0;
       margin-bottom: 0.5rem;
+    }
+    .placeholder-text {
+      color: #666;
+      font-style: italic;
     }
     .btn {
       display: inline-block;
-      margin-top: 0.5rem;
       padding: 0.5rem 1rem;
       background: #007bff;
       color: white;
       border: none;
       border-radius: 5px;
       text-decoration: none;
+      transition: background 0.3s ease;
     }
-    @media (min-width: 700px) {
-      .sections {
-        flex-direction: row;
-        justify-content: space-around;
+    .btn:hover {
+      background: #0056b3;
+    }
+    .view-all {
+      margin-top: 1rem;
+    }
+    footer {
+      background-color: #f8f9fa;
+      padding: 2rem 0;
+      text-align: center;
+      margin-top: 4rem;
+    }
+    @media (max-width: 900px) {
+      .slide-content h2 {
+        font-size: 1.8rem;
+      }
+      .slide-content p {
+        font-size: 1rem;
+        max-width: 80%;
+      }
+      header {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem;
+      }
+      p.tagline {
+        margin: 0.5rem 0 0 0;
       }
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="NS logo.svg" alt="Nernst Solution Logo" class="logo" />
-    <h1>!!Welcome to Nernst Solution</h1>
-    <p class="tagline">Powering the future of hydrogen technologies.</p>
+    <div class="logo-container">
+      <img src="NS logo.svg" alt="Nernst Solution Logo" class="logo" />
+      <p class="tagline">Powering the future of electrochemical technologies.</p>
+    </div>
   </header>
 
-  <div class="sections">
-    <div class="section">
-      <h2>About</h2>
-      <p>Learn more about our company and mission.</p>
-      <a href="about.html" class="btn">Learn More</a>
+  <nav class="navigation">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="slider-container">
+    <div class="slider">
+      <div class="slide">
+        <img src="images/Cronin-Water-Press-Release.jpg" alt="Electrolyzer Technology" class="placeholder-text" />
+        <div class="slide-content">
+          <h2>Advanced Electrochemical Process Solutions</h2>
+          <p>Discover our state-of-the-art fuel cell and electrolysis technology designed for maximum efficiency and durability.</p>
+          <a href="products.html" class="btn">Explore Products</a>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="images/PEM electrolyzer cell hardware.png" alt="PEM Cell Hardware" class="placeholder-text" />
+        <div class="slide-content">
+          <h2>PEM Cell Hardware</h2>
+          <p>High-quality components engineered for optimal performance in research and industrial applications.</p>
+          <a href="products.html" class="btn">View Hardware</a>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="images/1 kW.jfif" alt="Testing Equipment" class="placeholder-text" />
+        <div class="slide-content">
+          <h2>Precision Testing Equipment</h2>
+          <p>Reliable test stands for comprehensive evaluation of electrochemical processes.</p>
+          <a href="products.html" class="btn">See Test Stands</a>
+        </div>
+      </div>
     </div>
-    <div class="section">
-      <h2>Products</h2>
-      <p>Explore our range of hydrogen solutions.</p>
-      <a href="#" class="btn">View Products</a>
-    </div>
-    <div class="section">
-      <h2>Contact</h2>
-      <p>Get in touch with us for more information.</p>
-      <a href="#" class="btn">Contact Us</a>
+    <button class="slider-button prev">&#10094;</button>
+    <button class="slider-button next">&#10095;</button>
+    <div class="slider-nav">
+      <div class="slider-dot active"></div>
+      <div class="slider-dot"></div>
+      <div class="slider-dot"></div>
     </div>
   </div>
+
+  <div class="main-content">
+    <div class="featured-products">
+      <h2>Featured Products</h2>
+      <div class="product-showcase">
+        <div class="product-highlight">
+          <div class="product-image">
+            <img src="images/1 kW.jfif" alt="Laboratory Scale Test Stand">
+            <!-- Replace with: <img src="images/test-stand-1.jpg" alt="Laboratory Scale Test Stand"> -->
+          </div>
+          <div class="product-details">
+            <h3>Laboratory Scale Test Stand</h3>
+            <p>Compact solution for precise single cell testing with integrated control systems.</p>
+            <a href="products.html" class="btn">Learn More</a>
+          </div>
+        </div>
+        
+        <div class="product-highlight">
+          <div class="product-image">
+            <img src="images/PEM electrolyzer cell hardware.png" alt="PEM Single Cell Hardware">
+            <!-- Replace with: <img src="images/pem-cell-1.jpg" alt="PEM Single Cell Hardware"> -->
+          </div>
+          <div class="product-details">
+            <h3>PEM Single Cell Hardware</h3>
+            <p>High-precision cell hardware with adjustable compression for laboratory research.</p>
+            <a href="products.html" class="btn">Learn More</a>
+          </div>
+        </div>
+        
+        <div class="product-highlight">
+          <div class="product-image">
+            <img src="images/MEA.jfif" alt="Membrane Electrode Assembly">
+            <!-- Replace with: <img src="images/component-4.jpg" alt="Membrane Electrode Assembly"> -->
+          </div>
+          <div class="product-details">
+            <h3>Membrane Electrode Assembly</h3>
+            <p>High-performance MEAs with custom catalyst loadings for optimal efficiency.</p>
+            <a href="products.html" class="btn">Learn More</a>
+          </div>
+        </div>
+      </div>
+      <div class="view-all">
+        <a href="products.html" class="btn">View All Products</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2023 Nernst Solution. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Slider functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const slider = document.querySelector('.slider');
+      const slides = document.querySelectorAll('.slide');
+      const dots = document.querySelectorAll('.slider-dot');
+      const prevButton = document.querySelector('.slider-button.prev');
+      const nextButton = document.querySelector('.slider-button.next');
+      
+      let currentSlide = 0;
+      const totalSlides = slides.length;
+      
+      // Set initial position
+      updateSlider();
+      
+      // Add event listeners
+      prevButton.addEventListener('click', () => {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        updateSlider();
+      });
+      
+      nextButton.addEventListener('click', () => {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateSlider();
+      });
+      
+      // Add event listeners to dots
+      dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+          currentSlide = index;
+          updateSlider();
+        });
+      });
+      
+      // Auto slide
+      let slideInterval = setInterval(autoSlide, 5000);
+      
+      function autoSlide() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateSlider();
+      }
+      
+      // Pause auto slide on hover
+      slider.addEventListener('mouseenter', () => {
+        clearInterval(slideInterval);
+      });
+      
+      slider.addEventListener('mouseleave', () => {
+        slideInterval = setInterval(autoSlide, 5000);
+      });
+      
+      function updateSlider() {
+        // Update slider position
+        slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+        
+        // Update dots
+        dots.forEach((dot, index) => {
+          if (index === currentSlide) {
+            dot.classList.add('active');
+          } else {
+            dot.classList.remove('active');
+          }
+        });
+      }
+    });
+  </script>
 </body>
 </html>
