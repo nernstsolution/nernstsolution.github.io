@@ -141,6 +141,26 @@
       overflow: hidden;
       border: 1px solid #ddd;
     }
+    footer {
+      background-color: #f8f9fa;
+      padding: 2rem 0;
+      text-align: center;
+      margin-top: 2rem;
+    }
+    .footer-btn {
+      margin-right: 1rem;
+    }
+    .footer-text {
+      margin-top: 1rem;
+    }
+    .map-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f0f0f0;
+    }
     @media (max-width: 768px) {
       .contact-container {
         grid-template-columns: 1fr;
@@ -247,16 +267,16 @@
       
       <div class="map-container">
         <!-- Replace with an actual map embed code -->
-        <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: #f0f0f0;">
+        <div class="map-placeholder">
           <p>Interactive Map Will Be Embedded Here</p>
         </div>
       </div>
     </div>
   </div>
 
-  <footer style="background-color: #f8f9fa; padding: 2rem 0; text-align: center; margin-top: 2rem;">
-    <a href="index.html" class="btn" style="margin-right: 1rem;">Back to Home</a>
-    <p style="margin-top: 1rem;">© 2023 Nernst Solution. All rights reserved.</p>
+  <footer>
+    <a href="index.html" class="btn footer-btn">Back to Home</a>
+    <p class="footer-text">© 2023 Nernst Solution. All rights reserved.</p>
   </footer>
 </body>
 </html> 
