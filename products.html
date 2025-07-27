@@ -12,21 +12,29 @@
       color: #333;
     }
     header {
-      padding: 2rem;
-      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      background-color: #ffffff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .logo-container {
+      display: flex;
+      align-items: center;
     }
     .logo {
-      width: 600px;
+      width: 200px;
       height: auto;
-      margin-bottom: 1rem;
     }
-    h1 {
-      font-size: 2.5rem;
-      margin: 0.5rem 0;
+    p.tagline {
+      font-size: 1.2rem;
+      margin: 0 0 0 2rem;
+      font-weight: bold;
     }
     .catalog-container {
       max-width: 1200px;
-      margin: 0 auto;
+      margin: 2rem auto;
       padding: 0 2rem 2rem;
     }
     .category-section {
@@ -127,28 +135,52 @@
     }
     .navigation ul {
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
       list-style: none;
       margin: 0;
-      padding: 0;
+      padding: 0 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
     }
     .navigation li {
-      margin: 0 1rem;
+      margin-right: 2rem;
     }
     .navigation a {
       text-decoration: none;
-      color: #333;
-      font-weight: 500;
+      color: #1c6fab;
+      font-weight: bold;
+      font-size: 1.1rem;
     }
     .navigation a:hover {
-      color: #007bff;
+      color: #145380;
+    }
+    footer {
+      background-color: #f8f9fa;
+      padding: 2rem 0;
+      text-align: center;
+      margin-top: 2rem;
+    }
+    .footer-text {
+      margin-top: 1rem;
+    }
+    @media (max-width: 900px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem;
+      }
+      p.tagline {
+        margin: 0.5rem 0 0 0;
+      }
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="NS logo.svg" alt="Nernst Solution Logo" class="logo" />
-    <h1>Product Catalog</h1>
+    <div class="logo-container">
+      <img src="NS logo.png" alt="Nernst Solution Logo" class="logo" />
+      <p class="tagline">Powering the future of Electrochemical Technologies!</p>
+    </div>
   </header>
 
   <nav class="navigation">
@@ -170,13 +202,12 @@
       <div class="products-grid">
         <div class="product-card">
           <div class="product-image">
-            <p class="placeholder-text">Electrolyzer Test Stand Image 1</p>
-            <!-- Replace with: <img src="images/test-stand-1.jpg" alt="Laboratory Scale Test Stand"> -->
+            <img src="products/PEM Electrolyzer Test Stand/PEM Electrolyzer Test Stand 1.jpg" alt="PEM Electrolyzer Test Stand">
           </div>
           <div class="product-info">
-            <h3>Laboratory Scale Test Stand</h3>
+            <h3>PEM Electrolyzer Test Stand</h3>
             <p class="product-description">Compact test stand for single cell testing with integrated thermal, pressure, and flow control systems.</p>
-            <p class="price">€7,500.00</p>
+            <p class="price">$7,500.00</p>
             <div class="actions">
               <a href="#" class="btn">Request Info</a>
             </div>
@@ -185,13 +216,12 @@
         
         <div class="product-card">
           <div class="product-image">
-            <p class="placeholder-text">Electrolyzer Test Stand Image 2</p>
-            <!-- Replace with: <img src="images/test-stand-2.jpg" alt="Multi-Cell Test Platform"> -->
+            <img src="images/Multi-1 kW.jfif" alt="Multi-Cell Test Platform">
           </div>
           <div class="product-info">
             <h3>Multi-Cell Test Platform</h3>
             <p class="product-description">Advanced test station for stack evaluation with data acquisition and automated testing capabilities.</p>
-            <p class="price">€9,800.00</p>
+            <p class="price">$9,800.00</p>
             <div class="actions">
               <a href="#" class="btn">Request Info</a>
             </div>
@@ -200,28 +230,12 @@
         
         <div class="product-card">
           <div class="product-image">
-            <p class="placeholder-text">Electrolyzer Test Stand Image 3</p>
-            <!-- Replace with: <img src="images/test-stand-3.jpg" alt="Production Scale Evaluation System"> -->
+            <img src="products/AEM Electrolyzer Test Stand/AEM Electrolyzer Test Stand 1.png" alt="AEM Electrolyzer Test Stand">
           </div>
           <div class="product-info">
-            <h3>Production Scale Evaluation System</h3>
-            <p class="product-description">Industrial-grade test stand for full-scale stack testing with enhanced safety features.</p>
-            <p class="price">€12,500.00</p>
-            <div class="actions">
-              <a href="#" class="btn">Request Info</a>
-            </div>
-          </div>
-        </div>
-        
-        <div class="product-card">
-          <div class="product-image">
-            <p class="placeholder-text">Electrolyzer Test Stand Image 4</p>
-            <!-- Replace with: <img src="images/test-stand-4.jpg" alt="High-Pressure Test Station"> -->
-          </div>
-          <div class="product-info">
-            <h3>High-Pressure Test Station</h3>
+            <h3>AEM Electrolyzer Test Stand</h3>
             <p class="product-description">Specialized system for evaluating electrolyzer performance under high-pressure conditions up to 30 bar.</p>
-            <p class="price">€15,200.00</p>
+            <p class="price">$15,200.00</p>
             <div class="actions">
               <a href="#" class="btn">Request Info</a>
             </div>
@@ -232,20 +246,19 @@
     
     <div class="category-section">
       <div class="category-header">
-        <h2>PEM Electrolyzer Cell Hardware</h2>
+        <h2>Electrolyzer Cell Hardware</h2>
         <a href="#" class="view-more">View all cell hardware →</a>
       </div>
       
       <div class="products-grid">
         <div class="product-card">
           <div class="product-image">
-            <p class="placeholder-text">PEM Cell Hardware Image 1</p>
-            <!-- Replace with: <img src="images/pem-cell-1.jpg" alt="Single Cell Test Hardware"> -->
+            <img src="products/Single Cell Test Hardware/Single Cell Test Hardware 1.png" alt="Single Cell Test Hardware">
           </div>
           <div class="product-info">
             <h3>Single Cell Test Hardware</h3>
             <p class="product-description">High-precision cell hardware for laboratory research with adjustable compression and modular design.</p>
-            <p class="price">€525.00</p>
+            <p class="price">$525.00</p>
             <div class="actions">
               <a href="#" class="btn">Request Info</a>
             </div>
@@ -254,48 +267,33 @@
         
         <div class="product-card">
           <div class="product-image">
-            <p class="placeholder-text">PEM Cell Hardware Image 2</p>
-            <!-- Replace with: <img src="images/pem-cell-2.jpg" alt="Flow Field Plates"> -->
+            <img src="products/Multi-cell Stack Assembly/Multi-cell Stack Assembly 1.png" alt="Multi-Cell Stack Assembly">
+          </div>
+          <div class="product-info">
+            <h3>Multi-Cell Stack Assembly</h3>
+            <p class="product-description">Complete stack components with integrated sealing system for research and pilot projects.</p>
+            <p class="price">$399.00</p>
+            <div class="actions">
+              <a href="#" class="btn">Request Info</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="product-card">
+          <div class="product-image">
+            <img src="products/Flow Field Plates/Flow Field Plates 1.png" alt="Flow Field Plates">
           </div>
           <div class="product-info">
             <h3>Flow Field Plates</h3>
             <p class="product-description">Optimized flow field designs for enhanced mass transport and reduced electrical resistance.</p>
-            <p class="price">€399.00</p>
+            <p class="price">$2,310.00</p>
             <div class="actions">
               <a href="#" class="btn">Request Info</a>
             </div>
           </div>
         </div>
         
-        <div class="product-card">
-          <div class="product-image">
-            <p class="placeholder-text">PEM Cell Hardware Image 3</p>
-            <!-- Replace with: <img src="images/pem-cell-3.jpg" alt="Compact Stack Assembly"> -->
-          </div>
-          <div class="product-info">
-            <h3>Compact Stack Assembly</h3>
-            <p class="product-description">Complete stack components with integrated sealing system for research and pilot projects.</p>
-            <p class="price">€2,310.00</p>
-            <div class="actions">
-              <a href="#" class="btn">Request Info</a>
-            </div>
-          </div>
-        </div>
-        
-        <div class="product-card">
-          <div class="product-image">
-            <p class="placeholder-text">PEM Cell Hardware Image 4</p>
-            <!-- Replace with: <img src="images/pem-cell-4.jpg" alt="Membrane Electrode Assembly"> -->
-          </div>
-          <div class="product-info">
-            <h3>Membrane Electrode Assembly</h3>
-            <p class="product-description">High-performance MEAs with custom catalyst loadings for PEM electrolyzer applications.</p>
-            <p class="price">€326.00</p>
-            <div class="actions">
-              <a href="#" class="btn">Request Info</a>
-            </div>
-          </div>
-        </div>
+
       </div>
     </div>
     
@@ -308,13 +306,12 @@
       <div class="products-grid">
         <div class="product-card">
           <div class="product-image">
-            <p class="placeholder-text">Component Image 1</p>
-            <!-- Replace with: <img src="images/component-1.jpg" alt="Proton Exchange Membranes"> -->
+            <img src="products/Membrane Electrode Assembly/Membrane Electrode Assembly.jpg" alt="Membrane Electrode Assembly">
           </div>
           <div class="product-info">
-            <h3>Proton Exchange Membranes</h3>
-            <p class="product-description">High-conductivity membranes for PEM electrolyzers (pack of 10).</p>
-            <p class="price">€102.00</p>
+            <h3>Membrane Electrode Assembly</h3>
+            <p class="product-description">High-performance MEAs with custom catalyst loadings for PEM electrolyzer applications.</p>
+            <p class="price">$326.00</p>
             <div class="actions">
               <a href="#" class="btn">Request Info</a>
             </div>
@@ -323,28 +320,12 @@
         
         <div class="product-card">
           <div class="product-image">
-            <p class="placeholder-text">Component Image 2</p>
-            <!-- Replace with: <img src="images/component-2.jpg" alt="Reference Electrodes"> -->
-          </div>
-          <div class="product-info">
-            <h3>Reference Electrodes</h3>
-            <p class="product-description">High-quality Ag/AgCl reference electrodes for electrochemical measurements.</p>
-            <p class="price">€200.00</p>
-            <div class="actions">
-              <a href="#" class="btn">Request Info</a>
-            </div>
-          </div>
-        </div>
-        
-        <div class="product-card">
-          <div class="product-image">
-            <p class="placeholder-text">Component Image 3</p>
-            <!-- Replace with: <img src="images/component-3.jpg" alt="Catalyst Inks"> -->
+            <img src="products/Catalyst Inks/Catalyst Inks 1.jpg" alt="Catalyst Inks">
           </div>
           <div class="product-info">
             <h3>Catalyst Inks</h3>
             <p class="product-description">Ready-to-use catalyst formulations for electrode preparation.</p>
-            <p class="price">€137.00</p>
+            <p class="price">$137.00</p>
             <div class="actions">
               <a href="#" class="btn">Request Info</a>
             </div>
@@ -353,13 +334,12 @@
         
         <div class="product-card">
           <div class="product-image">
-            <p class="placeholder-text">Component Image 4</p>
-            <!-- Replace with: <img src="images/component-4.jpg" alt="Sealing Materials"> -->
+            <img src="products/Sealing Materials/Sealing Materials 1.jpg" alt="Sealing Materials">
           </div>
           <div class="product-info">
             <h3>Sealing Materials</h3>
             <p class="product-description">High-performance gaskets and sealing solutions for electrolyzer assembly.</p>
-            <p class="price">€63.00</p>
+            <p class="price">$63.00</p>
             <div class="actions">
               <a href="#" class="btn">Request Info</a>
             </div>
@@ -369,9 +349,9 @@
     </div>
   </div>
 
-  <footer style="background-color: #f8f9fa; padding: 2rem 0; text-align: center; margin-top: 2rem;">
+  <footer>
     <a href="index.html" class="btn back-btn">Back to Home</a>
-    <p style="margin-top: 1rem;">© 2023 Nernst Solution. All rights reserved.</p>
+    <p class="footer-text">© 2023 Nernst Solution. All rights reserved.</p>
   </footer>
 </body>
 </html> 
